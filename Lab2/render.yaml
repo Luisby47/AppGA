@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lab2-kotlin-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1
